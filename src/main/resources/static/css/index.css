@@ -1,0 +1,422 @@
+/* Modern Glassmorphic Design System | Rwanda Polytechnic Evaluation */
+:root {
+    --primary: #8b5cf6;
+    --primary-hover: #7c3aed;
+    --secondary: #ec4899;
+    --bg-dark: #020617;
+    --bg-card: rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(148, 163, 184, 0.15);
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --grad-main: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* Login Split Layout */
+.login-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.login-aside {
+    flex: 1.2;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/login_bg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-aside::after {
+    content: '';
+    position: absolute;
+    top: -20%; right: -20%;
+    width: 60%; height: 60%;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    opacity: 0.15;
+    filter: blur(80px);
+}
+
+.branding-content {
+    max-width: 600px;
+    z-index: 10;
+}
+
+.branding-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.branding-logo span { color: var(--primary); }
+
+.hero-text {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+.hero-text span {
+    background: var(--grad-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtext {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Login Form Side */
+.login-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    background: #020617;
+}
+
+.login-form-wrapper {
+    width: 100%;
+    max-width: 480px;
+}
+
+.login-header {
+    margin-bottom: 2.5rem;
+}
+
+.login-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.login-header p {
+    color: var(--text-muted);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.input-icon-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+input {
+    width: 100%;
+    padding: 1.1rem 1.1rem 1.1rem 3rem;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 0.75rem;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary);
+    background: rgba(15, 23, 42, 0.6);
+}
+
+.btn-full {
+    width: 100%;
+    padding: 1.1rem;
+    border-radius: 0.75rem;
+    background: var(--grad-main);
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Demo Accounts Cards */
+.demo-accounts {
+    margin-top: 3rem;
+}
+
+.demo-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.demo-title::before, .demo-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--glass-border);
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.demo-card {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--glass-border);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.demo-card:hover {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: var(--primary);
+}
+
+.demo-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.demo-info h4 { font-size: 0.9rem; margin-bottom: 0.2rem; }
+.demo-info p { font-size: 0.75rem; color: var(--text-muted); }
+
+.forgot-link {
+    float: right;
+    font-size: 0.8rem;
+    color: var(--primary);
+    text-decoration: none;
+}
+/* Dashboard Layout & Components */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 6%;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.logo-container i {
+    color: var(--primary);
+    font-size: 1.75rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.dashboard-container {
+    padding: 3rem 6%;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+}
+
+.header-row h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.glass {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    transition: 0.3s transform ease, 0.3s border-color ease;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-card i {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 2.25rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+}
+
+.stat-trend {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Glass Tables */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th {
+    text-align: left;
+    padding: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+td {
+    padding: 1.25rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+    font-size: 0.95rem;
+}
+
+tr:last-child td { border-bottom: none; }
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.btn-primary {
+    background: var(--grad-main);
+    color: #fff;
+}
+
+.btn-secondary {
+    background: rgba(148, 163, 184, 0.1);
+    color: #fff;
+    border: 1px solid var(--glass-border);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.role-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--primary);
+}
+
+.fade-up {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

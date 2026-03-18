@@ -1,0 +1,43 @@
+package com.evaluation.assessment.repository;
+
+import com.evaluation.assessment.entity.Role;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
+
+public interface RoleRepository extends JpaRepository<Role, Long> {
+    Optional<Role> findByName(String name);
+}
+
+// User Repository
+package com.evaluation.assessment.repository;
+import com.evaluation.assessment.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByUsername(String username);
+    List<User> findByRoleName(String roleName);
+    List<User> findByApprovedFalseAndRoleName(String roleName);
+}
+
+// Course Repository
+package com.evaluation.assessment.repository;
+import com.evaluation.assessment.entity.Course;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CourseRepository extends JpaRepository<Course, Long> {
+}
+
+// Survey Repository
+package com.evaluation.assessment.repository;
+import com.evaluation.assessment.entity.Survey;
+import com.evaluation.assessment.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface SurveyRepository extends JpaRepository<Survey, Long> {
+    List<Survey> findByInitiator(User initiator);
+    List<Survey> findByCourseId(Long courseId);
+    List<Survey> findByActiveTrue();
+}
